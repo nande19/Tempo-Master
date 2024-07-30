@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Dark_Grey"
+    tools:context=".ExistingProject">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:background="@color/dimGrey"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <EditText
+            android:id="@+id/editTextText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/pieblue"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="text"
+            android:text="@string/projectList"
+            android:textColor="@color/white"
+            android:textSize="48sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/darkGrey">
+
+            <TextView
+                android:id="@+id/titleTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Project_list"
+                android:textColor="@color/pieblue"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ViewBtn" />
+
+            <Button
+                android:id="@+id/ViewBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/View_Button"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/titleTxt"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/DeleteBtn" />
+
+            <Button
+                android:id="@+id/DeleteBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/Delete_Button"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/ViewBtn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ProjectRecycleView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/cardview_dark_background"
+            tools:listitem="@layout/item_project" />
+
+        <Button
+            android:id="@+id/rtnBackBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Back" />
+
+        <Button
+            android:id="@+id/btngoalsetting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/goal" />
+
+        <ImageView
+            android:id="@+id/projectPngView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_foreground" /> <!-- Placeholder image -->
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
